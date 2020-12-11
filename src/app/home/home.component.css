@@ -89,6 +89,16 @@ h1 {
     margin-top: .25rem;
 }
 
+.blink {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
 .last-update h3,
 .last-update h6 {
     margin: 0;
@@ -123,7 +133,8 @@ h6 {
 
 .Level .is-cherry h4,
 .Level .is-cherry h5 {
-    color: rgba(255, 7, 58, .6);
+    background-color: rgba(255, 7, 58, .6);
+    color: white
 }
 
 .Level .level-item>* {
@@ -184,7 +195,8 @@ h1 {
 
 .Level .is-blue h4,
 .Level .is-blue h5 {
-    color: rgba(0, 123, 255, .6);
+    background-color: #007bff99;
+    color: white
 }
 
 .Level .is-blue h1 {
@@ -193,7 +205,8 @@ h1 {
 
 .Level .is-green h4,
 .Level .is-green h5 {
-    color: rgba(40, 167, 69, .6);
+    background-color: rgba(40, 167, 69, .6);
+    color: white
 }
 
 .Level .is-green h1 {
@@ -202,7 +215,8 @@ h1 {
 
 .Level .is-gray h4,
 .Level .is-gray h5 {
-    color: rgba(70, 73, 77, 0.6);
+    background-color: rgba(70, 73, 77, 0.6);
+    color: white
 }
 
 .Level .is-gray h1 {
