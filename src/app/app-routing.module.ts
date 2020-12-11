@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
-import { FAQComponent } from './faq/faq.component';
+//import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
+//import { FAQComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -11,8 +11,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   { path: 'home', component: HomeComponent },
-  { path: 'helpful', component: HelpfulLinksComponent },
-  { path: 'faq',      component: FAQComponent },
+  //{ path: 'helpful', component: HelpfulLinksComponent },
+  //{ path: 'faq',      component: FAQComponent },
 ];
 
 @NgModule({
