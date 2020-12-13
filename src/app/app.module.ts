@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoronaService } from './shared/corona.service';
 import { DistrictComponent } from './district/district.component';
+import { LandingComponent } from './landing/landing.component';
 //import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 //import { FAQComponent } from './faq/faq.component';
 
@@ -15,6 +16,7 @@ import { DistrictComponent } from './district/district.component';
     AppComponent,
     HomeComponent,
     DistrictComponent,
+    LandingComponent,
     //HelpfulLinksComponent,
     //FAQComponent
   ],
