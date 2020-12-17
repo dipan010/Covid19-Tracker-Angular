@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoronaService } from './shared/corona.service';
 import { DistrictComponent } from './district/district.component';
 import { LandingComponent } from './landing/landing.component';
+import { WorldhomeComponent } from './worldhome/worldhome.component';
+import { CountruesComponent } from './countrues/countrues.component';
 //import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 //import { FAQComponent } from './faq/faq.component';
 
@@ -17,6 +19,8 @@ import { LandingComponent } from './landing/landing.component';
     HomeComponent,
     DistrictComponent,
     LandingComponent,
+    WorldhomeComponent,
+    CountruesComponent,
     //HelpfulLinksComponent,
     //FAQComponent
   ],
