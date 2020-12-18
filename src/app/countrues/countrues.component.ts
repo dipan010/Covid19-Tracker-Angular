@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { country } from '../country.model';
 import { CoronaService } from '../shared/corona.service';
 
 @Component({
@@ -7,23 +8,13 @@ import { CoronaService } from '../shared/corona.service';
   styleUrls: ['./countrues.component.css']
 })
 export class CountruesComponent implements OnInit {
-  //countries$: Country[]
-  DataCountryWise: Array<any> = [
-    { 
-    updated:'', 
-    country:'', 
-    cases:'', 
-    deaths:'', 
-    recovered:'', 
-    active:'', 
-    continent:'' 
-    }
-  ]
+  countries$: country[]
+
   constructor( private cs: CoronaService) { }
 
   ngOnInit() {
     return this.cs.getDataCountryWise()
-    .subscribe(data => this.DataCountryWise = data);
+    .subscribe(data => this.countries$ = data);
   }
 
 }
