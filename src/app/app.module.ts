@@ -3,13 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoronaService } from './shared/corona.service';
-import { DistrictComponent } from './district/district.component';
+import { DistrictComponent } from './components/district/district.component';
 import { LandingComponent } from './landing/landing.component';
 import { WorldhomeComponent } from './worldhome/worldhome.component';
-import { CountruesComponent } from './countrues/countrues.component';
+import { CountruesComponent } from './components/countrues/countrues.component';
 //import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 //import { FAQComponent } from './faq/faq.component';
 

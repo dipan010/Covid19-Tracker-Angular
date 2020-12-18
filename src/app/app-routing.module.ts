@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CountruesComponent } from './countrues/countrues.component';
+import { CountruesComponent } from './components/countrues/countrues.component';
 //import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 //import { FAQComponent } from './faq/faq.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { LandingComponent } from './landing/landing.component';
 
 
