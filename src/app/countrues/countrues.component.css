@@ -692,6 +692,10 @@ h3 {
     width: 100%;
 }
 
+.col-right {
+    text-align: right;
+}
+
 .stats3 {
     background: rgba(255, 7, 58, .12549);
     color: #ff073a;
