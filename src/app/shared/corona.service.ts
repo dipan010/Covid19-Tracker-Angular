@@ -13,11 +13,12 @@ export class CoronaService implements OnInit {
   BannerData: BehaviorSubject<any> = new BehaviorSubject('')
   districtdata: Subject<any> = new Subject<any>();
 
-  url_statewise = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise'
+  url_statewise = 'https://api.covidindiatracker.com/state_data.json'
   url_dailycases = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history'
-  ulr_districtwise = "https://api.covid19india.org/state_district_wise.json"
+  url_districtwise = "https://api.covid19india.org/v2/state_district_wise.json"
   url_banner = "https://api.covid19india.org/website_data.json"
   url_countrywise = " http://api.coronastatistics.live/countries"
+  url_totalIndia = "https://api.covidindiatracker.com/total.json"
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
 
@@ -44,8 +45,12 @@ export class CoronaService implements OnInit {
     this.state = state
   }
 
+  getTotalIndia():Observable<any>{
+    return this.http.get(this.url_totalIndia)
+  }
+
   getDataDistrictWise(state) {
-    this.http.get(this.ulr_districtwise).subscribe(data => {
+    this.http.get(this.url_districtwise).subscribe(data => {
       this.data1 = data
     //  console.log(this.data1)
    //   console.log(this.data1[state])
