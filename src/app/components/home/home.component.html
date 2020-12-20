@@ -23,22 +23,22 @@
             <div class="level-item is-cherry col-3 ">
                 <h5 class="badge "> Confirmed</h5>
                 <!--<h4>[+{{DailyStatus.total.confirmed}}]</h4>-->
-                <h1>{{statewisecase.confirmed}} </h1>
+                <h1>{{data?.confirmed}} </h1>
             </div>
             <div class="level-item is-blue col-3">
                 <h5 class="heading badge">Active</h5>
                 <!--<h4>[+{{DailyStatus.total.active}}]</h4>-->
-                <h1 class="title has-text-info ">{{statewisecase.active}}</h1>
+                <h1 class="title has-text-info ">{{data?.active}}</h1>
             </div>
             <div class="level-item is-green col-3">
                 <h5 class="heading badge">Recovered</h5>
                 <!--<h4>[+{{DailyStatus.total.recovered}}]</h4>-->
-                <h1 class="title has-text-success ">{{statewisecase.recovered}} </h1>
+                <h1 class="title has-text-success ">{{data?.recovered}} </h1>
             </div>
             <div class="level-item is-gray col-3">
                 <h5 class="heading badge">Deceased</h5>
                 <!--<h4>[+{{DailyStatus.total.deaths}}]</h4>-->
-                <h1 class="title has-text-grey ">{{statewisecase.deaths}}</h1>
+                <h1 class="title has-text-grey ">{{data?.deaths}}</h1>
             </div>
         </div>
 
@@ -93,27 +93,23 @@
             </thead>
 
 
-            <tbody *ngFor="let data of statewisedata;let i=index ">
-                <span class="dropdown rotateDownRight "><svg xmlns="http://www.w3.org/2000/svg " width="24 " height="24 " viewBox="0 0 24 24 " fill="none " stroke="currentColor " stroke-width="2 " stroke-linecap="round " stroke-linejoin="round
-                        "><polyline points="6 9 12 15 18 9 "></polyline></svg></span>
+            <tbody>
 
-                <tr class="state ">
-                    <td (click)="OngetState(data.state); showHideData(data) " style="font-weight: 600; ">{{data.state}}</td>
+                <tr class="state "   *ngFor="let s of sdata; let ndx = index">
+                    <td (click)="OngetState(s.state); showHideData(s) " style="font-weight: 600; ">{{s.state}}</td>
 
 
 
 
                     <td style="color: inherit; ">
 
-                        <span *ngIf='DailystateStatus[i].confirmed !==0 && DailystateStatus[i].confirmed > 0 ;' class="deltas " style="color: rgb(255, 7, 58); "><svg xmlns="http://www.w3.org/2000/svg " width="24 " height="24 " viewBox="0 0 24 24
-                        " fill="none " stroke="currentColor " stroke-width="2 " stroke-linecap="round " stroke-linejoin="round "><line x1="12 " y1="19 " x2="12 " y2="5 "></line><polyline points="5 12 12 5 19 12 "></polyline>
-                                </svg>    {{DailystateStatus[i].confirmed}}</span> {{data.confirmed}}
+                  {{s.confirmed}}
                     </td>
 
 
-                    <td style="color: inherit; ">{{data.active}}</td>
-                    <td style="color: inherit; ">{{data.recovered}}</td>
-                    <td style="color: inherit; ">{{data.deaths}}</td>
+                    <td style="color: inherit; ">{{s.active}}</td>
+                    <td style="color: inherit; ">{{s.recovered}}</td>
+                    <td style="color: inherit; ">{{s.deaths}}</td>
 
                 </tr>
             </tbody>
