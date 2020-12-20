@@ -18,7 +18,7 @@
             <thead>
                 <tr>
                     <th  class="sticky state-heading ">
-                        <div class="heading-content "><abbr title="State ">State/UT</abbr>
+                        <div class="heading-content "><abbr title="State ">Country</abbr>
                             <div class="" ></div>
                         </div>
                     </th>
@@ -50,7 +50,7 @@
             <tbody *ngFor="let country of countries$;let i=index ">
                 
                 <tr class="state ">
-                    <td  style="font-weight: 600; ">{{country.country}}</td>
+                    <td  style="font-weight: 600; " (click)="onSelect(country)">{{country.country}}</td>
                     <td style="color: inherit; ">{{country.cases}}</td>
                     <td style="color: inherit; ">{{country.active}}</td>
                     <td style="color: inherit; ">{{country.recovered}}</td>
