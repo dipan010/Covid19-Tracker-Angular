@@ -15,13 +15,13 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'landing', component:LandingComponent },
   { path: 'country', component:CountruesComponent },
-  { path: 'country-detail', component:CountryDetailComponent},
+  { path: 'world-country', component:CountryDetailComponent},
   //{ path: 'helpful', component: HelpfulLinksComponent },
   //{ path: 'faq',      component: FAQComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ useHash: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
