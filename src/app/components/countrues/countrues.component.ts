@@ -18,21 +18,21 @@ export class CountruesComponent implements OnInit {
     .subscribe(data => this.countries$ = data);
   }
 
-  onSelect(countries){
+  onSelect(country){
     let navigationExtras: NavigationExtras = {
       queryParams:{
-        country: countries.country,
-        cases: countries.cases,
-        active: countries.active,
-        recovered: countries.recovered,
-        deaths: countries.deaths,
-        casesPerOneMillion: countries.casesPerOneMillion,
-        deathsPerOneMillion: countries.deathsPerOneMillion,
-        activePerOneMillion: countries.activePerOneMillion,
-        recoveredPerOneMillion: countries.recoveredPerOneMillion
+        country: country.country,
+        cases: country.cases,
+        active: country.active,
+        recovered: country.recovered,
+        deaths: country.deaths,
+        casesPerOneMillion: country.casesPerOneMillion,
+        deathsPerOneMillion: country.deathsPerOneMillion,
+        activePerOneMillion: country.activePerOneMillion,
+        recoveredPerOneMillion: country.recoveredPerOneMillion
       }
     }
-    this.router.navigate(["country"], navigationExtras)
+    this.router.navigate(["world-country"], navigationExtras)
   }
 
 }
