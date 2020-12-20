@@ -5,7 +5,7 @@ import { CountruesComponent } from './components/countrues/countrues.component';
 //import { FAQComponent } from './faq/faq.component';
 import { HomeComponent } from './components/home/home.component';
 import { LandingComponent } from './landing/landing.component';
-
+import { CountryDetailComponent } from './components/country-detail/country-detail.component'
 
 const routes: Routes = [
   { path: '',
@@ -14,7 +14,8 @@ const routes: Routes = [
   },
   { path: 'home', component: HomeComponent },
   { path: 'landing', component:LandingComponent },
-  { path: 'country', component:CountruesComponent }
+  { path: 'country', component:CountruesComponent },
+  { path: 'country-detail', component:CountryDetailComponent},
   //{ path: 'helpful', component: HelpfulLinksComponent },
   //{ path: 'faq',      component: FAQComponent },
 ];
