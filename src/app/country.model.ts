@@ -6,4 +6,8 @@ export class country{
     recovered:number;
     active:number; 
     continent:string; 
+    casesPerOneMillion: number;
+    deathsPerOneMillion: number;
+    activePerOneMillion: number;
+    recoveredPerOneMillion: number;
 }
