@@ -10,7 +10,7 @@ import { DistrictComponent } from './components/district/district.component';
 import { LandingComponent } from './landing/landing.component';
 import { WorldhomeComponent } from './worldhome/worldhome.component';
 import { CountruesComponent } from './components/countrues/countrues.component';
-import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { CountryDetailComponent } from './components/country-detail/country-detail.component';
 //import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
 //import { FAQComponent } from './faq/faq.component';
 
