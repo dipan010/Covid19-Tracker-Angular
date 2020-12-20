@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaService } from '../../shared/corona.service';
-import { ThrowStmt } from '@angular/compiler';
+//import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({
@@ -38,12 +38,24 @@ export class HomeComponent implements OnInit {
   SingleStateData
   lastrefreshedtime: any;
 
-  constructor(private cs: CoronaService) { }
+  //new api
+  data:any;
+  sdata:any;
+  dis:any;
+  dataIs:any;
+
+  constructor(private cs: CoronaService) { 
+    
+    //new api
+    this.getData();
+    this.getStates();
+  }
 
   ngOnInit(): void {
 
     this.getStateWise()
     this.testData()
+
   }
 
   testData() {
@@ -337,5 +349,20 @@ export class HomeComponent implements OnInit {
     }
 
   }
+
+  //new api
+  getData(){
+    this.cs.getTotalIndia().subscribe((res)=>{
+      this.data = res;
+      //console.log("Con", this.data);
+    });
+    }
+    getStates(){
+      this.cs.getDataStateWise().subscribe((resp)=>{
+       this.sdata = resp;
+       //console.log("State", this.sdata);
+  
+      });
+    }  
 
 }
