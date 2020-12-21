@@ -7,3 +7,5 @@
     src: url(assets/fonts/archia-medium-webfont.80da55a5.woff2) format("woff2");
     src: url(assets/fonts/archia-semibold-webfont.890ee929.woff2) format("woff2");
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
