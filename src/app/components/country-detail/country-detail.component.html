@@ -1,12 +1,20 @@
 
-    <div class="container" style="padding-top: 20px">
-        <h1 class="state-name fadeInUp" style="animation-delay: 0ms; color:#e23028"> {{country}} </h1>        
+    <div class="container" style="padding-top: 20px; padding-bottom: 20px">
+        <div class="row">
+            <div class="col-md-7">
+            <h1 class="state-name fadeInUp" style="animation-delay: 0ms; color:#e23028"> {{country}} </h1>        
+            <span class="badge" routerLink="/country"> Back </span>
+            </div>
+            <div class="col-md-5"  style="text-align:right">
+                <span routerLink="/home">India </span> | <span routerLink="/country"> World </span>
+            </div>
+        </div>
         <div class="StateMeta population">
             <div class="meta-item population">
                 <h3> Population </h3>
                 <h1> {{population}}</h1>
             </div>
-            <div class="alert" style="border-radius:15px; border-color:#6c757d">
+            <div class="alert" style="border-radius:15px; border-color:#6c757d" *ngIf="tests">
                 <div class="alert-right">
                     <h5> Tested </h5>
                     <h2> {{tests}} </h2>

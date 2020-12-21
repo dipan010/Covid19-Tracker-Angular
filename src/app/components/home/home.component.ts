@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getStateWise()
+    //this.getStateWise()
     this.testData()
 
   }
@@ -106,9 +106,6 @@ export class HomeComponent implements OnInit {
     this.DailyStatus = test;
     this.DailystateStatus = this.DailyStatus.statewise
   }
-
-
-
 
   showHideData(data) {
     if(data && data['show'] == true) {
@@ -324,7 +321,7 @@ export class HomeComponent implements OnInit {
       });
     }  
   
-    getStateWise() {
+    /*getStateWise() {
       this.cs.getDataStateWise().subscribe(data => {
       this.lastrefreshedtime=data.data.lastRefreshed   
         this.lastupdateddate = data.data.lastRefreshed
@@ -352,7 +349,7 @@ export class HomeComponent implements OnInit {
     this.getDataofState(state)
   
       this.cs.getState(state)
-      this.cs.getDataDistrictWise(state)
+      this.cs.get(state)
    
     }
     getDataofState(state: any) {
@@ -361,5 +358,6 @@ export class HomeComponent implements OnInit {
       this.SingleStateData=f[0]
       console.log();
     }
-  
+ */   
+    
 }

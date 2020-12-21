@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DistrictComponent } from './district.component';
+import { SidebarNavComponent } from './sidebar-nav.component';
 
-describe('DistrictComponent', () => {
-  let component: DistrictComponent;
-  let fixture: ComponentFixture<DistrictComponent>;
+describe('SidebarNavComponent', () => {
+  let component: SidebarNavComponent;
+  let fixture: ComponentFixture<SidebarNavComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DistrictComponent ]
+      declarations: [ SidebarNavComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DistrictComponent);
+    fixture = TestBed.createComponent(SidebarNavComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

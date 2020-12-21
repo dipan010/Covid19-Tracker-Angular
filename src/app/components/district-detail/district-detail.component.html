@@ -1,3 +1,4 @@
+
 <div class="Home container">
     <div class="row">
     <div>
@@ -7,15 +8,16 @@
                 <div class="titles col-md-7">
                     <h1>COVID-19 Tracker <span class="badge badge-danger blink"> LIVE </span></h1>
                 </div>
-                <div class="col-md-3" style="text-align:right">
-                <span routerLink="/home">India </span> | <span routerLink="/country"> World </span>
-                </div>                                
+                <div class="col-md-3"  style="text-align:right">
+                    <span routerLink="/home">India </span> | <span routerLink="/country"> World </span>
+                </div>
+
             </div>
         </div>
-        <div class="row">
-        <div class="col">
-        <h5 class="affected-count fadeInUp " style="animation-delay: 1s;text-align:right ">218 Countries Affected by COVID</h5>
-        </div>
+        <div class="row" *ngFor="let s of dis">
+            <div class="col">
+            <h1 class="state-name fadeInUp" style="animation-delay: 0ms; color:#e23028">{{s.state}} </h1>
+            </div>
         <table class="table table-striped table-hover  fadeInUp col-md-12" style="animation-delay: 1s; ">
             <thead>
                 <tr>
@@ -25,7 +27,7 @@
                         </div>
                     </th>
                     <th  class="sticky ">
-                        <div class="heading-content "><abbr class="confirmed " title="Confirmed ">Confirm</abbr>
+                        <div class="heading-content "><abbr class="confirmed " title="Confirmed ">Confirmed</abbr>
                             <div class="" ></div>
                         </div>
                     </th>
@@ -35,13 +37,13 @@
                         </div>
                     </th>
                     <th class="sticky ">
-                        <div class="heading-content "><abbr class=" recovered" title="Recovered ">Recover</abbr>
+                        <div class="heading-content "><abbr class=" recovered" title="Recovered ">Recovered</abbr>
                             <div class="" ></div>
 
                         </div>
                     </th>
                     <th class="sticky ">
-                        <div class="heading-content "><abbr class="death" title="Deaths ">Death</abbr>
+                        <div class="heading-content "><abbr class="death" title="Deaths ">Deaths</abbr>
                             
                         </div>
                     </th>
@@ -49,14 +51,13 @@
             </thead>
             
 
-            <tbody *ngFor="let country of countries$;let i=index ">
-                
-                <tr class="state ">
-                    <td  style="font-weight: 600; " (click)="onSelect(country)">{{country.country}}</td>
-                    <td style="color: inherit; ">{{country.cases}}</td>
-                    <td style="color: inherit; ">{{country.active}}</td>
-                    <td style="color: inherit; ">{{country.recovered}}</td>
-                    <td style="color: inherit; ">{{country.deaths}}</td>
+            <tbody *ngFor="let s of dis">
+                <tr class="state " *ngFor="let d of s.districtData; let ndx = index">
+                    <td  style="font-weight: 600; " >{{d.district}}</td>
+                    <td style="color: inherit; ">{{d.confirmed}}</td>
+                    <td style="color: inherit; ">{{d.active}}</td>
+                    <td style="color: inherit; ">{{d.recovered}}</td>
+                    <td style="color: inherit; ">{{d.deceased}}</td>
 
                 </tr>
             </tbody>
