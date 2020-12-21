@@ -1,9 +1,61 @@
-{{country}}
-{{cases}}
-{{active}}
-{{recovered}}
-{{deaths}}
-{{casesPerOneMillion}}
-{{deathsPerOneMillion}}
-{{activePerOneMillion}}
-{{recoveredPerOneMillion}}
+
+    <div class="container" style="padding-top: 20px">
+        <h1 class="state-name fadeInUp" style="animation-delay: 0ms; color:#e23028"> {{country}} </h1>        
+        <div class="StateMeta population">
+            <div class="meta-item population">
+                <h3> Population </h3>
+                <h1> {{population}}</h1>
+            </div>
+            <div class="alert" style="border-radius:15px; border-color:#6c757d">
+                <div class="alert-right">
+                    <h5> Tested </h5>
+                    <h2> {{tests}} </h2>
+                    <h5 class="timestamp">As per source </h5>
+                </div>
+            </div>
+        </div>
+        <div class="StateMeta">
+            <div class="meta-item confirmed">
+                <div class="meta-item-top">
+                    <h3> Confirmed Per Million </h3>
+                </div>
+                <h1> {{casesPerOneMillion}} </h1>
+                <p> ~{{(cases/population)*1000000}} out of every 1 million people in {{country}} have tested positive for the virus.  </p>
+            </div>
+            <div class="meta-item active">
+                <div class="meta-item-top">
+                    <h3> Active Ratio </h3>
+                </div>
+                <h1> {{active/100000}}% </h1>
+                <p> For every 100 confirmed cases, {{(active/cases)*100}} are currently infected </p>
+            </div>
+            <div class="meta-item recovery" *ngIf="recovered">
+                <div class="meta-item-top">
+                    <h3> Recovery Ratio </h3>
+                </div>
+                <h1> {{recovered/100000}}% </h1>
+                <p> For every 100 confirmed cases, {{(recovered/cases)*100}} have recovered from the virus </p>
+            </div>
+            <div class="meta-item mortality" *ngIf="deaths">
+                <div class="meta-item-top">
+                    <h3> Case Fatality Ratio </h3>
+                </div>
+                <h1> {{deaths/100000}}% </h1>
+                <p> For every 100 confirmed cases, {{(deaths/cases)*100}} have unfortunately passed away from the virus </p>
+            </div>
+            <div class="meta-item tpm" *ngIf="testsPerOneMillion">
+                <div class="meta-item-top">
+                    <h3> Test Per Million </h3>
+                </div>
+                <h1> {{testsPerOneMillion}} </h1>
+                <p> For every 1 million people in {{country}} ~{{(tests/population)*1000000}} sample were tested.
+            </div>
+            <div class="meta-item gr" *ngIf="deathsPerOneMillion">
+                <div class="meta-item-top">
+                    <h3> Deaths Per Million </h3>
+                </div>
+                <h1> {{deathsPerOneMillion}} </h1>
+                <p> For every 1 million people in {{country}} ~{{(deaths/population)*1000000}} have tested positive for the virus. </p>
+            </div>
+        </div>
+    </div>
