@@ -8,12 +8,15 @@
                 <div class="titles col-md-7">
                     <h1>COVID-19 Tracker <span class="badge badge-danger blink"> LIVE </span></h1>
                 </div>
-                
+                <div class="col-md-3"  style="text-align:right">
+                    <span routerLink="/home">India </span> | <span routerLink="/country"> World </span>
+                </div>
+
             </div>
         </div>
         <div class="row" *ngFor="let s of dis">
             <div class="col">
-            {{s.state}}
+            <h1 class="state-name fadeInUp" style="animation-delay: 0ms; color:#e23028">{{s.state}} </h1>
             </div>
         <table class="table table-striped table-hover  fadeInUp col-md-12" style="animation-delay: 1s; ">
             <thead>
