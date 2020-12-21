@@ -18,7 +18,12 @@ export class DistrictComponent implements OnInit {
   isAscendingSort: boolean = false;
   districtdata1
   //districtdata1: any[];
-
+  
+  //newapi
+  sdata:any;
+  dis:any;
+  dataIs:any;
+  st:any;
   constructor(private cs: CoronaService, ) { }
 
   ngOnInit(): void {

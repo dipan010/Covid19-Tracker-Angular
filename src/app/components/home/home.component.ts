@@ -110,47 +110,6 @@ export class HomeComponent implements OnInit {
 
 
 
-
-
-
-  getStateWise() {
-    this.cs.getDataStateWise().subscribe(data => {
-    this.lastrefreshedtime=data.data.lastRefreshed   
-      this.lastupdateddate = data.data.lastRefreshed
-     // console.log(this.lastupdated)
-
-      function getDataDiff(startDate, endDate) {
-        var diff = endDate.getTime() - startDate.getTime();
-        var days = Math.floor(diff / (60 * 60 * 24 * 1000));
-        var hours = Math.floor(diff / (60 * 60 * 1000)) - (days * 24);
-        var minutes = Math.floor(diff / (60 * 1000)) - ((days * 24 * 60) + (hours * 60));
-        var seconds = Math.floor(diff / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
-        return { day: days, hour: hours, minute: minutes, second: seconds };
-      }
-
-      this.lastupdated = getDataDiff(new Date(this.lastupdateddate), new Date(this.startdate));
-
-    },
-      err => {
-        console.log(err)
-      })
-  }
-
-  OngetState(state) {
-
-  this.getDataofState(state)
-
-    this.cs.getState(state)
-    this.cs.getDataDistrictWise(state)
- 
-  }
-  getDataofState(state: any) {
-   // console.log(this.statewisedata)
-   const f = this.statewisedata.filter(a => a.state==state);
-    this.SingleStateData=f[0]
-    console.log();
-  }
-
   showHideData(data) {
     if(data && data['show'] == true) {
       data['show'] = false;
@@ -364,5 +323,43 @@ export class HomeComponent implements OnInit {
   
       });
     }  
-
+  
+    getStateWise() {
+      this.cs.getDataStateWise().subscribe(data => {
+      this.lastrefreshedtime=data.data.lastRefreshed   
+        this.lastupdateddate = data.data.lastRefreshed
+       // console.log(this.lastupdated)
+  
+        function getDataDiff(startDate, endDate) {
+          var diff = endDate.getTime() - startDate.getTime();
+          var days = Math.floor(diff / (60 * 60 * 24 * 1000));
+          var hours = Math.floor(diff / (60 * 60 * 1000)) - (days * 24);
+          var minutes = Math.floor(diff / (60 * 1000)) - ((days * 24 * 60) + (hours * 60));
+          var seconds = Math.floor(diff / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
+          return { day: days, hour: hours, minute: minutes, second: seconds };
+        }
+  
+        this.lastupdated = getDataDiff(new Date(this.lastupdateddate), new Date(this.startdate));
+  
+      },
+        err => {
+          console.log(err)
+        })
+    }
+  
+    OngetState(state) {
+  
+    this.getDataofState(state)
+  
+      this.cs.getState(state)
+      this.cs.getDataDistrictWise(state)
+   
+    }
+    getDataofState(state: any) {
+     // console.log(this.statewisedata)
+     const f = this.getStates;
+      this.SingleStateData=f[0]
+      console.log();
+    }
+  
 }
