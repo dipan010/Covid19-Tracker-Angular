@@ -17,7 +17,7 @@ export class CoronaService implements OnInit {
   url_dailycases = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history'
   url_districtwise = "https://api.covid19india.org/v2/state_district_wise.json"
   url_banner = "https://api.covid19india.org/website_data.json"
-  url_countrywise = " http://api.coronastatistics.live/countries"
+  url_countrywise = " https://api.coronastatistics.live/countries"
   url_totalIndia = "https://api.covidindiatracker.com/total.json"
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
@@ -49,7 +49,7 @@ export class CoronaService implements OnInit {
     return this.http.get(this.url_totalIndia)
   }
 
-  getDataDistrictWise(state) {
+  /*getDataDistrictWise(state) {
     this.http.get(this.url_districtwise).subscribe(data => {
       this.data1 = data
     //  console.log(this.data1)
@@ -59,6 +59,17 @@ export class CoronaService implements OnInit {
       this.districtdata.next(this.district)
     }
     )
+  }*/
+  getDistrict(){
+    return this.http.get('https://api.covid19india.org/v2/state_district_wise.json');
   }
-
+  getCon() {
+    return this.http.get('https://api.covidindiatracker.com/total.json');
+  }
+  getSt(){
+     return this.http.get('https://api.covidindiatracker.com/state_data.json');
+  }
+  getDt(){
+    return this.http.get('https://api.covid19india.org/v2/state_district_wise.json');
+  }
 }
