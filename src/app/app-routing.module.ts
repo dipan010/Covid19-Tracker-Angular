@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CountruesComponent } from './components/countrues/countrues.component';
-//import { HelpfulLinksComponent } from './helpful-links/helpful-links.component';
-//import { FAQComponent } from './faq/faq.component';
 import { HomeComponent } from './components/home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { CountryDetailComponent } from './components/country-detail/country-detail.component'
+import { DistrictDetailComponent } from './components/district-detail/district-detail.component';
+
 
 const routes: Routes = [
   { path: '',
@@ -16,8 +16,7 @@ const routes: Routes = [
   { path: 'landing', component:LandingComponent },
   { path: 'country', component:CountruesComponent },
   { path: 'world-country', component:CountryDetailComponent},
-  //{ path: 'helpful', component: HelpfulLinksComponent },
-  //{ path: 'faq',      component: FAQComponent },
+  {path: 'State/:state', component: DistrictDetailComponent}
 ];
 
 @NgModule({
