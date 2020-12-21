@@ -22,6 +22,7 @@ export class CountruesComponent implements OnInit {
     let navigationExtras: NavigationExtras = {
       queryParams:{
         country: country.country,
+        population: country.population,
         cases: country.cases,
         active: country.active,
         recovered: country.recovered,
@@ -29,7 +30,9 @@ export class CountruesComponent implements OnInit {
         casesPerOneMillion: country.casesPerOneMillion,
         deathsPerOneMillion: country.deathsPerOneMillion,
         activePerOneMillion: country.activePerOneMillion,
-        recoveredPerOneMillion: country.recoveredPerOneMillion
+        recoveredPerOneMillion: country.recoveredPerOneMillion,
+        testsPerOneMillion: country.testsPerOneMillion,
+        tests: country.tests
       }
     }
     this.router.navigate(["world-country"], navigationExtras)

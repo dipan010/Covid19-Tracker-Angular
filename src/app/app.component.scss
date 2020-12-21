@@ -256,3 +256,8 @@ a.button.btn-light.medium:hover {
     padding: 20px;
     float: none;
 }
+
+@import '~material-bottom-nav';
+.hidden-labels-nav {
+    @include bottom-nav( $background-color: #009688, $active-color: #FFFFFF, $inactive-color: #E0E0E0, $hide-inactive-labels: true);
+}
