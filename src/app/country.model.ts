@@ -1,6 +1,7 @@
 export class country{
     updated: number; 
     country: string; 
+    population: number;
     cases: number;
     deaths: number; 
     recovered:number;
